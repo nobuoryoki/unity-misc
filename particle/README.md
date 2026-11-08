@@ -5,11 +5,18 @@
 ```
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class BoxController : MonoBehaviour
 {
+    private ParticleSystem particle;
+
+    void Start()
+    {
+        particle = GetComponent<ParticleSystem>();
+    }
+
     void OnCollisionEnter(Collision other)
     {
-        GetComponent<ParticleSystem>().Play();
+        particle.Play();
     }
 }
 ```
